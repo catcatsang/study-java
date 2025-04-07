@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.app.domain.dto.PostDTO.java&apos; to &apos;ReplyDTO.java&apos;&#x0D;&#x0A;- Original project: &apos;y_jdbc&apos;&#x0D;&#x0A;- Original element: &apos;com.app.domain.dto.PostDTO.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.app.domain.dto.ReplyDTO.java&apos;" description="Rename compilation unit &apos;PostDTO.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.app.domain.dto{PostDTO.java" name="ReplyDTO.java" references="false" stamp="1740302527648" version="1.0"/>
+</session>

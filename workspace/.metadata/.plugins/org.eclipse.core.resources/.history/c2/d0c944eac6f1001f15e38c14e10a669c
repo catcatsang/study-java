@@ -1,0 +1,9 @@
+package com.app.test;
+
+import com.app.domain.vo.ReplyVO;
+
+public class Test1 {
+	public static void main(String[] args) {
+		ReplyVO reply = new ReplyVO();
+	}
+}

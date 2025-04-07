@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename field &apos;bean&apos; in &apos;list.task.coffe.Coffee&apos; to &apos;name&apos;&#x0D;&#x0A;- Original project: &apos;t_collection&apos;&#x0D;&#x0A;- Original element: &apos;list.task.coffe.Coffee.bean&apos;&#x0D;&#x0A;- Renamed element: &apos;list.task.coffe.Coffee.name&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" delegate="false" deprecate="false" description="Rename field &apos;bean&apos;" flags="589826" getter="false" id="org.eclipse.jdt.ui.rename.field" input="/src&lt;list.task.coffe{Coffee.java[Coffee^bean" name="name" references="true" setter="false" stamp="1739183074703" textual="false" version="1.0"/>
+</session>

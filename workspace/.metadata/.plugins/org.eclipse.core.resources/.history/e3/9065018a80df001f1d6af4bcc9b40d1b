@@ -1,0 +1,23 @@
+package list.task.food;
+
+import list.task.DBConnecter;
+
+public class Restaurant {
+	
+	
+	
+//	음식을 추가
+	public void plus (Food food) {
+		DBConnecter.foods.add(food);
+	}
+	
+//	음식 이름으로 음식 종류 조회
+	public Food searchSort (Food food) {
+		for(Food food : DBConnecter.foods) {
+			
+		}
+	}
+//	사용자가 원하는 종류의 음식 전체 조회
+//	음식 종류 수정 후 10% 가격 상승
+//	사용자가 원하는 종류의 음식 개수 조회
+}

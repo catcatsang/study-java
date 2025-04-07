@@ -1,0 +1,19 @@
+package com.app.test;
+
+import com.app.domain.dao.MemberDAO;
+import com.app.domain.dao.PostDAO;
+import com.app.domain.dao.ReplyDAO;
+import com.app.domain.vo.MemberVO;
+import com.app.domain.vo.ReplyVO;
+
+public class Test1 {
+	public static void main(String[] args) {
+		
+		  MemberDAO memberDAO = new MemberDAO();
+	      PostDAO postDAO = new PostDAO();
+	      ReplyDAO replyDAO = new ReplyDAO();
+//      전체 목록(전체 목록 중, 내가 작성한 댓글인지 검사, 이후 수정 및 삭제 테스트)
+		ReplyVO reply = new ReplyVO();	// ReplyVO 필드 생성
+		MemberVO member = M
+	}
+}

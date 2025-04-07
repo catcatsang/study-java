@@ -1,0 +1,201 @@
+package com.app.test;
+
+import java.util.Optional;
+
+import com.app.domain.dao.MemberDAO;
+import com.app.domain.dao.PostDAO;
+import com.app.domain.dto.PostDTO;
+import com.app.domain.vo.MemberVO;
+import com.app.domain.vo.PostVO;
+import com.app.exception.post.PostNotFoundException;
+
+public class Test {
+   public static void main(String[] args) {
+     
+     
+      
+      
+      
+      
+      
+ 
+   
+   
+//   postVO.setId(1L);
+//   postVO.setPostContent("취미");
+//   postVO.setPostTitle("배추잎은 10개다");
+//   
+//   
+//
+//   postDAO.UPDATE(postVO);
+
+     
+     
+      
+      
+//      Long id = 1L;
+//    MemberVO member = memberDAO.selectById(id);
+//    
+//    member.setMemberName("홍길동");
+//    memberDAO.update(member);
+      
+//      회원가입 화면
+//      String memberEmail = "hgd5555@naver.com";
+//      String memberPassword = "5555";
+//      String memberName = "홍길동";
+//      int memberAge = 20;
+//      String memberGender = "여자";
+//      
+//      MemberVO memberVO = new MemberVO();
+//      
+//      memberVO.setMemberEmail(memberEmail);
+//      memberVO.setMemberPassword(memberPassword);
+//      memberVO.setMemberName(memberName);
+//      memberVO.setMemberAge(memberAge);
+//      memberVO.setMemberGender(memberGender);
+//      
+////      System.out.println(memberVO);
+//      
+//      memberDAO.insert(memberVO);
+      
+//      로그인
+//      String memberEmail = "hds1234@gmail.com";
+//      String memberPassword = "fdsfdsf";
+//      
+//      MemberVO member = new MemberVO();
+//      member.setMemberEmail(memberEmail);
+//      member.setMemberPassword(memberPassword);
+//      
+////      System.out.println(memberDAO.selectByMemberEmailAndMemberPassword(member));
+//      member = memberDAO.selectByMemberEmailAndMemberPassword(member).orElseThrow(() -> {
+//         throw new LoginException("로그인 실패");
+//      });
+//      
+//      System.out.println(member);
+      
+//      회원 조회
+//      Long id = 1L;
+//      System.out.println(memberDAO.selectById(id));
+      
+//      회원 수정
+//      Long id = 1L;
+//      MemberVO member = memberDAO.selectById(id);
+//      
+//      member.setMemberName("홍길동");
+//      memberDAO.update(member);
+      
+//      회원 삭제
+//      Long id = 1L;
+//      MemberVO member = memberDAO.selectById(id);
+//      
+//      memberDAO.delete(member.getId());
+      
+//      회원 전체 조회
+//      memberDAO.selectAll().forEach((member) -> {
+//         System.out.println(member);
+//      });
+      
+//      이메일 중복검사
+//      String memberEmail = "hds@gmail.com";
+//      Optional<MemberVO> foundMember = memberDAO.selectByMemberEmail(memberEmail);
+//      System.out.println(foundMember.isPresent());
+      
+//      게시글 추가
+//      Long memberId = 21L;
+//      MemberVO member = memberDAO.selectById(memberId);
+//      PostVO post = new PostVO();
+//      
+//      post.setPostTitle("테스트 제목1");
+//      post.setPostContent("테스트 내용1");
+//      post.setMemberId(member.getId());
+      
+//      postDAO.insert(post);
+      
+//      memberId = 22L;
+//      member = memberDAO.selectById(memberId);
+//      post = new PostVO();
+//      
+//      post.setPostTitle("테스트 제목3");
+//      post.setPostContent("테스트 내용3");
+//      post.setMemberId(member.getId());
+      
+//      postDAO.insert(post);
+      
+//      Optional<PostDTO> foundPost = postDAO.selectById(32321L);
+//      foundPost.ifPresent((post) -> {
+//         System.out.println(post);
+//      });
+//      PostDTO post = foundPost.orElse(new PostDTO());
+//      System.out.println(post);
+      
+//      PostDTO post = foundPost.orElseThrow(() -> {throw new PostNotFoundException("게시글 조회 실패");});
+//      System.out.println(post);
+
+//     게시글 삭제(작성한 게시글인지 검사)
+//     Long memberId = 21L;
+//     Long postId = 2L;
+//     MemberVO member = memberDAO.selectById(memberId);
+//     Optional<PostDTO> foundPost = postDAO.selectById(postId);
+//     PostDTO post = foundPost.orElseThrow(() -> {throw new PostNotFoundException();});
+//     if(member.getId() == post.getMemberId()) {
+//        postDAO.delete(post.getId());
+//     }
+	   
+
+	   
+	   PostDAO postDAO = new PostDAO();
+	   PostVO post = new PostVO();
+	   
+	   
+	   String postTitle = "지수 숟가락";
+	   String postContent = "식기";
+	   
+	   post.setPostTitle(postTitle);
+	   post.setPostContent(postContent);
+	   post.setMemberId(2l);
+	   
+	   postDAO.insert(post);
+	   
+	   postDAO.selectAll();
+	   
+	   
+	   
+	  
+	   
+	   
+	   
+   	   
+   	   
+   	  
+   		
+   		
+   		
+   		
+   		
+      
+      
+   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,61 @@
+package com.app.domain.stdy;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.naming.spi.DirStateFactory.Result;
+
+import com.app.domain.vo.MemberVO;
+import com.app.jdbc.configuration.Configuration;
+
+public class MemberDAOstdy {
+	private Connection connection;
+	private PreparedStatement preparedStatement;
+	private ResultSet resultSet;
+	
+//	회원가입
+	public void insert(MemberVO memberVO) {
+//		
+		String query = "INSERT INTO TBL_MEMBER "
+				+ "(ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_NAME, MEMBER_AGE, MEMBER_GENDER) "
+				+ "VALUES(SEQ_MEMBER.NEXTVAL, ?, ?, ?, ?, ?)";
+		
+		connection = Configuration.getConnection(); // 커넥션에 서버를 담는다?
+			try {
+				preparedStatement = connection.prepareStatement(query);
+				
+				preparedStatement.setString(1,memberVO.getEmail());
+				preparedStatement.setString(2, memberVO.getPassword());
+				preparedStatement.setString(3, memberVO.getName());
+				preparedStatement.setInt(4,memberVO.getAge());
+				preparedStatement.setString(5,memberVO.getGender());
+				
+				preparedStatement.executeQuery();
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}finally {
+					try {
+						if(preparedStatement != null) {
+							preparedStatement.close();
+						}
+						if(connection != null) {
+							connection.close();
+						}
+					} catch (SQLException e) {
+						throw new RuntimeException();
+					}
+			}
+				
+	}
+//	로그인
+	public void selectByMemberEmailAndMemberPassword(MemberVO memberVO) {
+		String query = "SELECT ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_NAME, MEMBER_AGE, MEMBER_GENDER, CREATED_DATE, UPDATED_DATE "
+				+ "FROM TBL_MEMBER "
+				+ "WHERE MEMBER_EMAIL = ?, MEMBER_PASSWORD = ?";
+				
+		
+	}
+}

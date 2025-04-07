@@ -1,0 +1,11 @@
+package m_interface2;
+
+public interface tire {
+	int wheel = 4;
+	
+	void repairS();
+	
+	
+	
+	
+}

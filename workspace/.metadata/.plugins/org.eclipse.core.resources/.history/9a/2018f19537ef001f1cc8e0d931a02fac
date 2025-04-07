@@ -1,0 +1,10 @@
+package com.app.domain.vo;
+
+public class ReplyVO {
+	Long id
+	String replyContent
+	Long postId
+	Long memberId
+	String Created
+	String Updated
+}

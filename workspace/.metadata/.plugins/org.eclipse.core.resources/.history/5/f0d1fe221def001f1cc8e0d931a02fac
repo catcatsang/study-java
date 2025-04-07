@@ -1,0 +1,26 @@
+package com.app.domain.stdy4;
+
+import java.io.ObjectInputFilter.Config;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import javax.naming.spi.DirStateFactory.Result;
+
+import com.app.domain.vo.MemberVO;
+import com.app.jdbc.configuration.Configuration;
+
+public final class memberDAOstdy4 {
+	private Connection connection;
+	private PreparedStatement preparedStatement;
+	private ResultSet resultSet;
+	
+//	회원가입 
+	public void insert(MemberVO memberVO) {
+		String query = "INSERT INTO TBL_MEMBER "
+				+ "(ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_NAME, MEMBER_AGE, MEMBER_GENDER) "
+				+ "VALUES(SEQ_MEMBER.NEXTVAL, ?, ?, ?, ?, ?)";
+		
+		connection = Configuration.getConnection()
+	}
+}

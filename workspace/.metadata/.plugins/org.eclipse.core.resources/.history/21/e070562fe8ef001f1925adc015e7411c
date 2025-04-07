@@ -1,0 +1,58 @@
+package com.app.domain.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+
+import com.app.domain.vo.ReplyVO;
+import com.app.jdbc.configuration.Configuration;
+
+public class ReplyDAO {
+	private Connection connection;
+	private PreparedStatement preparedStatement;
+	private ResultSet resultSet;
+	
+//	추가 
+	public void insert(ReplyVO replyVO) {
+		String query = "INSERT INTO TBL_REPLY "
+				+ "(ID, REPLY_CONTENT, POST_ID, MEMBER_ID) "
+				+ "VALUES(SEQ_REPLY.NEXTVAL, ?, ?, ?)";
+				
+				
+		
+		connection = Configuration.getConnection();
+		
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			
+			preparedStatement.setString(1, replyVO.getReplyContent());
+			preparedStatement.setLong(2, replyVO.getPostId());
+			preparedStatement.setLong(3, replyVO.getMemberId());
+			
+			preparedStatement.executeUpdate();
+		} catch (SQLException e) {
+		}finally {
+			try {
+				if(preparedStatement != null) {
+		              preparedStatement.close();
+		           }
+		           if(connection != null) {
+		              connection.close();
+		           }
+				
+			} catch (SQLException e) {
+				throw new RuntimeException();
+			}	
+		}
+				
+	}
+	
+	
+	
+	
+//	수정
+	
+	
+	
+//	삭제
+}

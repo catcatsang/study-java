@@ -1,0 +1,9 @@
+package n_anonymous;
+
+public abstract class  FormAdpater implements Form   {
+	@Override
+	public void free(String order) {};
+		
+		
+	
+}

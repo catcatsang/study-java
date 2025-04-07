@@ -1,0 +1,9 @@
+package castingTest;
+
+public class Video {
+	public static void main(String[] args) {
+		CastingTask category = new CastingTask();
+		
+		category.getService();
+	}
+	}

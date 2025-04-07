@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;m_interface2.tire&apos; to &apos;Tire&apos;&#x0D;&#x0A;- Original project: &apos;m_interface&apos;&#x0D;&#x0A;- Original element: &apos;m_interface2.tire&apos;&#x0D;&#x0A;- Renamed element: &apos;m_interface2.Tire&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;tire&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;m_interface2{tire.java[tire" matchStrategy="1" name="Tire" qualified="false" references="true" similarDeclarations="false" stamp="1738141004051" textual="false" version="1.0"/>
+</session>

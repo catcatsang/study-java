@@ -1,0 +1,133 @@
+2025년 2월 19일 수요일
+[한동석] [오후 12:48] https://us06web.zoom.us/rec/share/sXSY9h_WDKoypLPj6c7jBqp1D-4MoQKR6CdnYAiHZRcWCLyApArQ8MJV3BUa9P27.ulIi8yEArBbaq0ZY 
+암호: s4JF$hZ3
+[한동석] [오후 12:49] 파일: java_jdbc.zip
+[한동석] [오후 1:25] https://drive.google.com/file/d/1k1ULIfKoFQXWBXt6Oujz5d4nnX4-z6bl/view?usp=sharing
+[한동석] [오후 1:26]   export ORACLE_HOME=/u01/app/oracle/product/11.2.0/xe 
+  export ORACLE_SID=XE export NLS_LANG=`$ORACLE_HOME/bin/nls_lang.sh` 
+  export ORACLE_BASE=/u01/app/oracle 
+  export LD_LIBRARY_PATH=$ORACLE_HOME/lib:$LD_LIBRARY_PATH 
+  export PATH=$ORACLE_HOME/bin:$PATH
+  . /u01/app/oracle/product/11.2.0/xe/bin/oracle_env.sh 
+[한동석] [오후 2:43] 43.201.99.77
+[한동석] [오후 2:43] 파일: oracle-server.pem
+[한동석] [오후 2:53] 파일: oracle_aws.txt
+[한지수] [오후 3:30] 지금 본관이라 5분정도 늦게 들갈거 같습니다ㅠ 
+2025년 2월 20일 목요일
+[한동석] [오전 9:38] CREATE SEQUENCE SEQ_POST;
+CREATE TABLE TBL_POST(
+   ID NUMBER CONSTRAINT PK_POST PRIMARY KEY,
+   POST_TITLE VARCHAR2(1000) NOT NULL,
+   POST_CONTENT VARCHAR2(1000) NOT NULL,
+   POST_READ_COUNT NUMBER DEFAULT 0,
+   MEMBER_ID NUMBER NOT NULL,
+   CREATED_DATE DATE DEFAULT SYSDATE,
+   UPDATED_DATE DATE DEFAULT SYSDATE,
+   CONSTRAINT FK_POST_MEMBER FOREIGN KEY(MEMBER_ID)
+   REFERENCES TBL_MEMBER(ID)
+);
+
+SELECT * FROM TBL_POST;
+[한동석] [오전 9:41] package com.app.domain.vo;
+
+import java.util.Objects;
+
+public class PostVO {
+   private Long id;
+   private String postTitle;
+   private String postContent;
+   private int postReadCount;
+   private Long memberId;
+   private String createdDate;
+   private String updatedDate;
+   
+   public PostVO() {;}
+
+   public Long getId() {
+      return id;
+   }
+
+   public void setId(Long id) {
+      this.id = id;
+   }
+
+   public String getPostTitle() {
+      return postTitle;
+   }
+
+   public void setPostTitle...
+[한동석] [오전 10:26] package com.app.domain.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Optional;
+
+import com.app.configuration.Configuration;
+import com.app.domain.dto.PostDTO;
+import com.app.domain.vo.PostVO;
+
+public class PostDAO {
+   private Connection connection;
+   private PreparedStatement preparedStatement;
+   private ResultSet resultSet;
+   
+//   추가하기
+   public void insert(PostVO postVO) {
+      String query =...
+[한동석] [오전 10:26] package com.app.domain.dto;
+
+import java.util.Objects;
+
+public class PostDTO {
+   private Long id;
+   private String postTitle;
+   private String postContent;
+   private int postReadCount;
+   private Long memberId;
+   private String memberName;
+   private String createdDate;
+   private String updatedDate;
+   
+   public PostDTO() {;}
+
+   public Long getId() {
+      return id;
+   }
+
+   public void setId(Long id) {
+      this.id = id;
+   }
+
+   public String getPostTitle() {
+      return postTitle;
+...
+[한동석] [오전 10:26] package com.app.exception.post;
+
+public class PostNotFoundException extends RuntimeException{
+   public PostNotFoundException() {;}
+   
+   public PostNotFoundException(String message) {
+      super(message);
+   }
+}
+
+[한동석] [오전 10:26] package com.app.test;
+
+import java.util.Optional;
+
+import com.app.domain.dao.MemberDAO;
+import com.app.domain.dao.PostDAO;
+import com.app.domain.dto.PostDTO;
+import com.app.domain.vo.MemberVO;
+import com.app.domain.vo.PostVO;
+import com.app.exception.post.PostNotFoundException;
+
+public class Test {
+   public static void main(String[] args) {
+      MemberDAO memberDAO = new MemberDAO();
+      PostDAO postDAO = new PostDAO();
+      
+//      회원가입 화면
+//      String memberEmail = "hgd5555@naver.com";...

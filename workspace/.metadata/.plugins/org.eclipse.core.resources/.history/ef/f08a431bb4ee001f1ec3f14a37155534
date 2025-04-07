@@ -1,0 +1,213 @@
+package com.app.domain.stdy2;
+
+import java.io.ObjectInputFilter.Config;
+import java.lang.reflect.Member;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import javax.imageio.plugins.tiff.GeoTIFFTagSet;
+
+import com.app.domain.vo.MemberVO;
+import com.app.jdbc.configuration.Configuration;
+
+import oracle.net.aso.n;
+
+public class MemberDAOstdy2 {
+	private Connection connection;
+	private PreparedStatement preparedStatement;
+	private ResultSet resultSet;
+
+//	회원가입 
+	public void insert(MemberVO memberVO) {
+		String query = "INSERT INTO TBL_MEMBER \"\r\n"
+				+ "ID, MEMBER_EMAIL, MEMBER_PASSWORD, MEMBER_NAME, MEMBER_AGE, MEMBER_GENDER "
+				+ "VALUES(SEQ_MEMBER.NEXTVAL, ?, ?, ?, ?, ?)";
+
+		connection = Configuration.getConnection();
+		try {
+			preparedStatement = connection.prepareStatement(query);
+
+			preparedStatement.setString(1, memberVO.getEmail());
+			preparedStatement.setString(2, memberVO.getPassword());
+			preparedStatement.setString(3, memberVO.getName());
+			preparedStatement.setInt(4, memberVO.getAge());
+			preparedStatement.setString(5, memberVO.getGender());
+
+			preparedStatement.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException();
+			}
+		}
+
+	}
+
+//	로그인
+	public MemberVO SelectByMemberEmailAndMemberPassWord(MemberVO memberVO) {
+		MemberVO member = null;
+		String query = "SELECT " + "ID, MEMBER_EMAIL, MEMBER_PASSWORD, "
+				+ "MEMBER_NAME, MEMBER_AGE, MEMBER_GENDER, CREATED_DATE, UPDATED_DATE "
+				+ "WHERE MEMBER_EMAIL = ?, AND MEMBER_PASSWORD = ?";
+
+		connection = Configuration.getConnection();
+		try {
+			preparedStatement = connection.prepareStatement(query);
+
+			preparedStatement.setString(1, memberVO.getEmail());
+			preparedStatement.setString(2, memberVO.getPassword());
+
+			resultSet = preparedStatement.executeQuery();
+			if (resultSet.next()) {
+				member = new MemberVO();
+
+				member.setId(resultSet.getLong(1));
+				member.setEmail(resultSet.getString(2));
+				member.setPassword(resultSet.getString(3));
+				member.setName(resultSet.getString(4));
+				member.setAge(resultSet.getInt(5));
+				member.setGender(resultSet.getString(6));
+				member.setCreated_date(resultSet.getString(7));
+				member.setUpdated_date(resultSet.getString(8));
+
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (resultSet != null) {
+					resultSet.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+
+			} catch (SQLException e) {
+				throw new RuntimeException();
+			}
+		}
+		return member;
+	}
+
+//	아이디로 회원정보 조회
+	public MemberVO selectByMemberEmailAndMemberPassword(Long id) {
+		MemberVO member = null;
+		String query = "SELECT " + "ID, MEMBER_EMAIL, MEMBER_PASSWORD, "
+				+ "MEMBER_NAME, MEMBER_AGE, MEMBER_GENDER, CREATED_DATE, UPDATED_DATE " + "FROM TBL_MEMBER "
+				+ "WHERE ID = ?";
+
+		connection = Configuration.getConnection();
+		try {
+			preparedStatement = connection.prepareStatement(query);
+
+			preparedStatement.setLong(1, id);
+
+			resultSet = preparedStatement.executeQuery();
+
+			if (resultSet.next()) {
+				member = new MemberVO();
+
+				member.setEmail(resultSet.getString(1));
+				member.setPassword(resultSet.getString(2));
+				member.setName(resultSet.getString(3));
+				member.setAge(resultSet.getInt(4));
+				member.setGender(resultSet.getString(5));
+				member.setCreated_date(resultSet.getString(6));
+				member.setUpdated_date(resultSet.getString(7));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (resultSet != null) {
+					resultSet.close();
+				}
+				if (preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if (connection != null) {
+					connection.close();
+				}
+
+			} catch (SQLException e) {
+				throw new RuntimeException();
+			}
+		}
+		return member;
+	}
+
+//	수정하기
+	public void update(MemberVO memberVO) {
+		String query = "UPDATE TBL_MEMBER " + "SET MEMBER_NAME = ?, MEMBER_AGE = ?, MEMBER_GENDER = ? "
+				+ "WHERE ID = ?";
+
+		connection = Configuration.getConnection();
+
+		try {
+			preparedStatement = connection.prepareStatement(query);
+
+			preparedStatement.setString(1, memberVO.getName());
+			preparedStatement.setInt(2, memberVO.getAge());
+			preparedStatement.setString(3, memberVO.getGender());
+
+			preparedStatement.executeQuery();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (preparedStatement != null) {
+					preparedStatement.close();
+
+				}
+				if (connection != null) {
+					connection.close();
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException();
+			}
+		}
+	}
+
+//	삭제하기
+	public void delete(Long id) {
+		String query = "DELETE " + "FROM TBL_MEMBER " + "WHERE ID = ?";
+
+		connection = Configuration.getConnection();
+
+		try {
+			preparedStatement = connection.prepareStatement(query);
+			
+			preparedStatement.setLong(1, id);
+			
+			preparedStatement.executeQuery();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				if(preparedStatement != null) {
+					preparedStatement.close();
+				}
+				if(connection != null) {
+					preparedStatement.close();
+				}
+			} catch (SQLException e) {
+				throw new RuntimeException()
+			}
+		}
+
+	}
+}

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;inhTest.InhTest03.java&apos; to &apos;InhTest03_mystdy.java&apos;&#x0D;&#x0A;- Original project: &apos;i_inheritance&apos;&#x0D;&#x0A;- Original element: &apos;inhTest.InhTest03.java&apos;&#x0D;&#x0A;- Renamed element: &apos;inhTest.InhTest03_mystdy.java&apos;" description="Rename compilation unit &apos;InhTest03.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;inhTest{InhTest03.java" name="InhTest03_mystdy.java" references="false" stamp="1737429655473" version="1.0"/>
+</session>

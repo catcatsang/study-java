@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;odd&apos; in &apos;streamTask.StreamTask.main(...)&apos; to &apos;noeven&apos;&#x0D;&#x0A;- Original project: &apos;o_lamda&apos;&#x0D;&#x0A;- Original element: &apos;streamTask.StreamTask.main(String[]).odd&apos;&#x0D;&#x0A;- Renamed element: &apos;odd&apos;&#x0D;&#x0A;- Update references to refactored element" description="Rename local variable &apos;odd&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;streamTask{StreamTask.java[StreamTask~main~\[QString;@odd!2016!2065!2035!2037!QArrayList\&lt;QInteger;&gt;;!0!false" name="noeven" references="true" stamp="1738551382311" version="1.0"/>
+</session>

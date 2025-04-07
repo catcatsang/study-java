@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;lamdaTest.LamdaInter.java&apos; to &apos;LambdaInter.java&apos;&#x0D;&#x0A;- Original project: &apos;o_lamda&apos;&#x0D;&#x0A;- Original element: &apos;lamdaTest.LamdaInter.java&apos;&#x0D;&#x0A;- Renamed element: &apos;lamdaTest.LambdaInter.java&apos;" description="Rename compilation unit &apos;LamdaInter.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;lamdaTest{LamdaInter.java" name="LambdaInter.java" references="false" stamp="1737592174911" version="1.0"/>
+</session>
