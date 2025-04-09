@@ -1,10 +1,10 @@
-# 📘 Java 기본 개념 정리
+#  Java 기본 개념 정리
 
 > 프로그래밍 언어는 개발자와 운영체제가 소통하기 위한 언어이다.
 
 ---
 
-## 🧾 용어 정리
+##  용어 정리
 
 ### 소스코드
 
@@ -30,7 +30,7 @@
 
 ---
 
-## ⚙️ JAVA 프로그램 구조
+##  JAVA 프로그램 구조
 
 ```txt
 JAVA 프로그램
@@ -48,23 +48,23 @@ JAVA 프로그램
 
 ---
 
-## 🔧 Java 개발 도구 구성
+##  Java 개발 도구 구성
 
-### 🧩 JVM (Java Virtual Machine)
+###  JVM (Java Virtual Machine)
 
 -   Java 프로그램을 실행
 
-### 🧰 JRE (Java Runtime Environment)
+###  JRE (Java Runtime Environment)
 
 -   JVM을 생성하고 실행에 필요한 라이브러리 포함
 
-### 🛠️ JDK (Java Development Kit)
+###  JDK (Java Development Kit)
 
 -   JRE + 개발에 필요한 도구 + 컴파일/실행 명령어 포함
 
 ---
 
-## 💻 설치 링크
+##  설치 링크
 
 -   [ JDK 설치](https://drive.google.com/file/d/1bsLuMXWQ-yg50m4SNToucnhEBMLSg6He/view?usp=drive_link)
 -   [ 이클립스 IDE](https://drive.google.com/file/d/18qYUbfdkXWrX0hbSnvFOuihh9MXI_k7j/view?usp=drive_link)
@@ -72,13 +72,13 @@ JAVA 프로그램
 
 ---
 
-## 📂 기본 구조
+##  기본 구조
 
 프로젝트 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ 패키지 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ 클래스 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; └─ 메소드 <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└─ 소스코드
 
 ---
 
-## 📤 출력 메소드
+##  출력 메소드
 
 | 메소드      | 설명             |
 | ----------- | ---------------- |
@@ -102,7 +102,7 @@ System.out.println("D");
 
 ---
 
-## 📦 변수
+##  변수
 
 ---
 
@@ -125,7 +125,7 @@ int x = 10;
 
 ---
 
-## 🕦변수의 초기값
+## 변수의 초기값
 
 | 자료형 | 기본값   |
 | ------ | -------- |
@@ -136,7 +136,7 @@ int x = 10;
 
 ---
 
-## ⚠️ 변수 선언 시 주의사항
+##  변수 선언 시 주의사항
 
 1. 같은 이름의 변수로 재선언 불가
 
@@ -156,7 +156,7 @@ int x = 10;
 
 ---
 
-## 🔒 상수
+##  상수
 
 ```
 final int MAX_VALUE = 100;
@@ -168,7 +168,7 @@ final int MAX_VALUE = 100;
 
 ---
 
-## 🔁 형변환
+##  형변환
 
 ### 자동 형변환
 
